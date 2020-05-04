@@ -23,7 +23,7 @@ let word;
 let loc;
 let score;
 let miss;
-const timeLimit = 3 * 3000;
+const timeLimit = 6 * 10000;
 let startTime;
 let isPlaying = false;
   

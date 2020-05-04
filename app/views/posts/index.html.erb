@@ -2,9 +2,6 @@
 
  <% if user_signed_in? %>
  
- AddShowMenu
- 
-  master
   <div class = "header">
 <div class = "left-content">
   <h1 class="vintage">Typ-Pro</h1>
@@ -14,13 +11,26 @@
   <%= link_to "LogOut", destroy_user_session_path, method: :delete,class:"btn" %>
  </div>
 </div>
+ <div class="dayScore">
+        スコア一覧
+    <% @posts.each do |post| %>
+      <div class="scores__date">
+              <%= post.created_at.strftime("%m-%d %H:%M") %>
+        <div class="scores__point">
+           <%= post.content %>得点 
+        </div>
+      </div>
+    <% end %>
+  </div>
 <div class = main-image>
  <div class="typing">
   <p class="hello">
-    タイピングでプログラミングを学ぼう！
+    タイピングで学ぼう！
   </p>
  </div>
   <%= link_to "Start!", new_post_path, class: "start-btn" %>
+
+   
  
 <% else %>
 
