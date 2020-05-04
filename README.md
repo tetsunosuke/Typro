@@ -1,0 +1,2 @@
+# simpleisbest
+ タイピングのアプリです

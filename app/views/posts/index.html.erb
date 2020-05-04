@@ -1,0 +1,48 @@
+<div class="main">
+
+ <% if user_signed_in? %>
+
+  <div class = "header">
+<div class = "left-content">
+  <h1 class="vintage">Typ-Pro</h1>
+  </div>
+ <div class = "right-content">
+  <%= link_to "MyPage", new_post_path,class:"btn" %><br>
+  <%= link_to "LogOut", destroy_user_session_path, method: :delete,class:"btn" %>
+ </div>
+</div>
+<div class = main-image>
+ <div class="typing">
+  <p class="hello">
+    タイピングでプログラミングを学ぼう！
+  </p>
+ </div>
+  <%= link_to "Start!", new_post_path, class: "start-btn" %>
+ 
+<% else %>
+
+<div class = "header">
+<div class = "left-content">
+  <h1 class="vintage">Typ-Pro</h1>
+  </div>
+ <div class = "right-content">
+  <%= link_to "ログイン", new_user_session_path,class:"btn" %><br>
+  <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
+ </div>
+</div>
+
+<div class = main-image>
+ <div class="typing">
+  <p class="hello">
+    タイピングでプログラミングを学ぼう！
+  </p>
+ </div>
+
+  <%= link_to "Start!", new_post_path, class: "start-btn" %>
+
+<div>
+  
+<% end %>
+
+</div>
+</main>

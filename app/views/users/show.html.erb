@@ -1,0 +1,13 @@
+<div class ="main">
+<%= @user.name %>さんの投稿一覧<br>
+
+<% @posts.each do |post| %>
+
+<%= link_to post.title,post_path(post.id) %><br>
+<%= post.content %>
+
+
+<% end %>
+
+
+</main>
