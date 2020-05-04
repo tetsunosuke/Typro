@@ -79,6 +79,7 @@
   .main-image{
     width: 90%;
     text-align: center;
+    margin-left: -80px;
   }
   .typing {
     display: flex;
@@ -101,7 +102,7 @@
 .typing .hello {
   width: 0;
   animation:
-  type 1.6s steps(16, end) 1000ms forwards;
+  type 1.6s steps(12, end) 1000ms forwards;
 }
 
 @keyframes type {
