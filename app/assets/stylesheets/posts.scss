@@ -30,6 +30,19 @@
   background-blend-mode:lighten;
   background-position: center;
 
+  .dayScore{
+    height: 29rem;
+    border:solid 4px rgb(104, 104, 104);
+    float: left;
+    background-color: whitesmoke;
+    margin-left: 1%;
+    width: 11rem;
+    overflow: scroll;
+    .scores__date{
+      margin-top: 3px;
+    }
+  
+  }
   .btn{
     margin-top: 20px;
     margin-right: 5rem;
@@ -64,7 +77,8 @@
     }
   }
   .main-image{
-    padding-top:70px;
+    width: 90%;
+    text-align: center;
   }
   .typing {
     display: flex;
@@ -76,7 +90,7 @@
   
   .typing p {
     color: black;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: "Courier New", Consolas, monospace;
     letter-spacing: 4px;
     overflow: hidden;
@@ -112,4 +126,8 @@
 }
     .v1{
       display: none;
+    }
+
+    .dayScore{
+
     }
