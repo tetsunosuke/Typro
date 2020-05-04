@@ -43,11 +43,21 @@
   <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
  </div>
 </div>
-
+<div class="dayScore">
+        
+    <% @posts.each do |post| %>
+      <div class="scores__date">
+              
+        <div class="scores__point">
+           
+        </div>
+      </div>
+    <% end %>
+  </div>
 <div class = main-image>
  <div class="typing">
   <p class="hello">
-    タイピングでプログラミングを学ぼう！
+    タイピングで学ぼう！
   </p>
  </div>
 
