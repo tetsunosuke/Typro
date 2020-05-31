@@ -28,14 +28,14 @@ describe User do
     it "passwordが存在してもpassword_confirmationがない場合は登録できないこと" do
       user = build(:user,password_confirmation:"")
       user.valid?
-      expect(user.errors[:password_confirmation]).to include("can't be blank")
+      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
       
     end
     
     it "nameが7文字以上であれば登録できないこと" do
       user = build(:user,name:"aaaaaaa")
       user.valid?
-      expect(user.errors[:name]).to include("")
+      expect(user.errors[:name]).to include("is too long (maximum is 6 characters)")
     end
     it "nameが6文字以下では登録できること" do
       user = build(:user,name:"aaaaaa")
@@ -44,19 +44,20 @@ describe User do
     
     it "重複したemailがあれば登録できないこと" do
       user = create(:user)
-      anather_user = build(:user,email:user.email)
-      anather_user.valid?
-      binding.pry
-      expect(user.errors[:email]).to include("has already been taken")
+      another_user = build(:user,email:user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("has already been taken")
     end
   
     it "passwordが6文字以上であれば登録できること" do
-      user = build(:user)
+      user = build(:user, password:"aaaaaa", password_confirmation: "aaaaaa")
       expect(user).to be_valid
     end
+
     it "passwordが5文字以下であれば登録できないこと" do
-      user = build(:user)
-      expect(user).to be_valid
+      user = build(:user,password:"aaaaa", password_confirmation: "aaaaa")
+      user.valid?
+      expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
     end
   end
 end
