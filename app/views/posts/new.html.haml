@@ -1,0 +1,30 @@
+.typ-page
+  .typ-page__space
+    %input#startbtn{:type => "button", :value => "START!"}/
+    %input{:onclick => "window.location.reload();", :type => "button", :value => "RESET"}/
+    %p#target Click on Start!
+    %p.info
+      Letter count:
+      %span#score
+        0
+        %span
+    %p.info
+      Miss count:
+      %span#miss
+        0
+        %span
+    %p.info
+      Time left:
+      %span#timer
+        0.00
+        %span
+    %p#result
+  - if user_signed_in?
+    .result-btn
+      #results
+        = form_for(@post) do |f|
+          = f.number_field :score,id:"score-form",value:""
+          %br/
+          = f.submit value="結果を登録する",class:"btn"
+    
+  = link_to "戻る", root_path ,class:"btn"
