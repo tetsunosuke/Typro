@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
-  validates :content,  presence: true
+  validates :score,  presence: true
   belongs_to :user
 end
