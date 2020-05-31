@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user)
+    @posts = Post.includes(:user).order("score DESC")
+    
     
   end
 
@@ -10,9 +11,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to root_path
-    
+    if Post.create(post_params)
+      redirect_to new_post_path
+    else
+      render action: :new
+    end
   end
   
   def show
@@ -41,8 +44,8 @@ class PostsController < ApplicationController
   
   private
   def post_params
-   params.require(:post).permit(:title, :content).merge(user_id: current_user.id)
+   params.require(:post).permit(:score).merge(user_id: current_user.id)
   end
-  
+
 
 end
