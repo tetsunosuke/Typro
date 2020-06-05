@@ -1,29 +1,62 @@
-$(document).on('turbolinks:load', function () {
-
-
-  "use strict";
-  function TypeStart() {
-  {
-    
+function TypeStart() {
   
   const words = [
-    "function",
-    "console.log",
-    "this",
-    "setTimeout",
-    "keydown",
-    "mouseover",
-    "mouseout",
-    "addEventListener",
-    "document.getElementById",
-    "textContent",
-    "railsroutes",
+    "indexOf",
+    "lastindexOf",
+    "charAt",
+    "match",
+    "replace",
+    "search",
+    "substring",
+    "substr",
+    "sprit",
+    "toUpperCase",
+    "toLowerCase",
+    "search",
+    "link",
+    "concat",
+    "trim",
+    "push",
+    "pop",
+    "unshift",
+    "slice",
+    "sort",
+    "reverse",
+    "concat",
+    "join",
+    "splice",
+    "Mathrandom",
+    "ceil",
+    "floor",
+    "round",
+    "max",
+    "min",
+    "abs",
+    "pow",
+    "sqrt",
+    "sin",
+    "cos",
+    "tan",
+    "getFullYea",
+    "getMonth",
+    "getDate",
+    "getDay",
+    "getHoures",
+    "getMinutes",
+    "getSeconds",
+    "getMilliseconds",
+    "toDateString",
+    "toTimeString",
+    "toLocaleDateString",
+    "toLocaleTimeString",
+    "toString",
+   
   ];
   let word;
   let loc;
   let score;
   let miss;
-  const timeLimit = 3 * 1000;
+  const timeLimit = 6 * 10000;
   let startTime;
   let isPlaying = false;
   
@@ -35,12 +68,10 @@ $(document).on('turbolinks:load', function () {
   const result = document.getElementById('result');
   
   
-  
-  
   function updateTarget(){
     let placeholder = "";
     for (let i = 0; i<loc;i++){
-        placeholder +="_";
+      placeholder +="_";
       }
       target.textContent = placeholder + word.substring(loc);
       
@@ -69,7 +100,7 @@ $(document).on('turbolinks:load', function () {
       const point = score - miss;
       result.textContent = (`今回のスコアは${point}点、正解率は${accuracy.toFixed(1)}% でした！`);
       const form = document.getElementById
-        
+      
       ('score-form').value = point;
     }
     
@@ -105,24 +136,10 @@ $(document).on('turbolinks:load', function () {
         updateTarget();
         score++;
         scoreLabel.textContent = score;
-        
-        
       }else{
         miss++;
         missLabel.textContent = miss;
       }
-      
     });
-    
-  
-    
-    
-    
-    
-    
-    
-  }
 }
-
 window.onload = TypeStart
-});
