@@ -1,10 +1,9 @@
+=javascript_include_tag "main.js"
 .header
   .left-content
     %h1.main-logo Typro
   - if user_signed_in?
-    .right-content
-      = link_to "MyPage",  user_path(current_user),class:"btn"
-      = link_to "LogOut", destroy_user_session_path, method: :delete,class:"btn"
+    = link_to "LogOut", destroy_user_session_path, method: :delete,class:"logoutBtn"
   - else
     .right-content
       .right-content__wrapper
@@ -12,18 +11,26 @@
         = link_to "新規登録", new_user_registration_path, class: "btn"
       .defoult-message
         登録するとスコアが確認できます。
-        
-
-
 .main
   .main-image__messages
     %h2 タイピングでプログラミングを学ぼう！
-    = link_to "Start!", new_post_path, class: "start-btn"
+
+    = link_to "Start!", new_post_path, data: {"turbolinks": false},class: "start-btn"
   - if user_signed_in?
-    .day-score
-      %p.title スコア一覧
+    .dayScore
+      .title#switch
+        %p.rankScores#rank ランキング
+        %p.myScores#score マイスコア
       - @posts.each do |post|
-        .scores__date
+        .scores__date1
+          = post.created_at.strftime("%m-%d %H:%M")
+          .scores__point
+            挑戦者:
+            = post.user.name
+            = post.score
+            得点
+      - @hiscore.each do |post|
+        .scores__date2
           = post.created_at.strftime("%m-%d %H:%M")
           .scores__point
             挑戦者:
@@ -31,6 +38,6 @@
             = post.score
             得点
 
-   
+  
 
 
