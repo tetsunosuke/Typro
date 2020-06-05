@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.1.0"
+lock "~> 3.14.0"
 
 set :application, "simpleisbest"
 set :repo_url, "git@example.com:shiropt/typ-pro.git"
