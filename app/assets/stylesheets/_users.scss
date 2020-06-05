@@ -1,0 +1,28 @@
+.signin,.login{
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 8%;
+  color: whitesmoke;
+
+  .actions{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+.return_btn{
+  @include  buttonStyle();
+}
+.return_btn:hover{
+  @include hover();
+}
+.submit_btn{
+  @include  buttonStyle();
+  background-color: rgba(0,0,0,0,);
+  width: 180px;
+}
+.submit_btn:hover{
+  @include hover();
+}

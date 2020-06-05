@@ -14,8 +14,7 @@
     margin-top: 100px;
     text-align: center;
     text-decoration: none;
-    
-    
+
     #target{
       font-size: 46px;
       letter-spacing: 3px;
@@ -28,23 +27,16 @@
     display: none;
   }
  
-  
   .btn{
-    background:rgba(233, 238, 238, 0);
+    @include buttonStyle();
+    display: block;
     width: 20%;
     text-align: center;
     margin: 0 auto;
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: white;
-    border: double 4px white;
-    border-radius: 3px;
-    transition: .4s;
+    background:rgba(0, 0, 0, 0);
     margin-bottom:5px ;
   }
   .btn:hover {
-    background: #fffbef;
-    color: black;
+   @include hover();
   }
 }

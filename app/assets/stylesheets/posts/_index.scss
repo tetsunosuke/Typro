@@ -1,0 +1,121 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 120px;
+  position: fixed;
+  
+  .main-logo {
+    font-size: 72px;
+    margin-top: 0px;
+    margin-left: 20px;
+    color: rgb(58, 55, 55);
+    font-family: 'Lobster';
+    text-shadow: 4px 3px 0px #fff, 
+    9px 8px 0px rgba(0,0,0,0.15);
+    display: block;
+  }
+  
+  .right-content{
+    width: 290px;
+    .right-content__wrapper{
+      display: flex;
+      justify-content: space-around;
+    }
+    .defoult-message{
+      margin-top: 10px;
+      color: white;
+      width: 400px;
+      height: 100px;
+    }
+
+  }
+    .btn,.logoutBtn{
+      @include buttonStyle();
+      margin-right: 10px;
+    }
+    .logoutBtn{
+      height: 50px;
+    }
+    .logoutBtn:hover{
+      background:white;
+      color:black;
+    }
+    .btn:hover {
+      @include hover();
+      }  
+    }
+    
+    .main{
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-flow: row-reverse;
+      background-image: url(1.jpg);
+      background-size:cover;
+      .main-image__messages{
+        width: 100%;
+        text-align: center;
+        margin-left: -80px;
+        height: 300px;
+        margin-top: 250px;
+        padding-left: 100px;
+        color: whitesmoke;
+      }
+        .dayScore{
+          border: double 4px whitesmoke;
+          border-radius: 3px;
+          float: left;
+          margin-top: 150px;
+          width: 350px;
+          height: 80%;
+          overflow: scroll;
+          .title{
+            width: 100%;
+            line-height: 60px;
+            margin: 0;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+
+            p{
+              line-height: 30px;
+              opacity: 0.5;
+            }
+            .rankScores{
+              opacity: 1;
+            }
+          }
+          
+          .scores__date1,.scores__date2{
+            background:rgba(233, 238, 238, 0.4);
+            margin-top: 3px;
+          }
+          .scores__date2{
+            display: none;
+          }
+          .scores__date1:hover{
+            @include hover();
+          }
+          .scores__date2:hover{
+            @include hover();
+          }
+  }
+  .start-btn{
+    @include buttonStyle();
+    padding: 0.5em 1em;
+    width: 15rem;
+    height: 3rem;
+    }
+    .start-btn:hover {
+      @include hover();
+    }
+  }
+
+
+
+
+   

@@ -1,0 +1,15 @@
+@mixin buttonStyle(){
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: whitesmoke;
+  border: double 4px white;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+@mixin hover() {
+  background: #fffbef;
+  color: black;
+}
