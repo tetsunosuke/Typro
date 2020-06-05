@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.includes(:user).order("score DESC")
-    
+    if user_signed_in?
+    @scores = current_user.posts
+    @hiscore =  @scores.order("score DESC")
+    end
     
   end
 
   def new
     @post = Post.new
-
   end
 
   def create
@@ -17,13 +19,6 @@ class PostsController < ApplicationController
       render action: :new
     end
   end
-  
-  def show
-    @post =  Post.find(params[:id])
-  end
-  
-  
-  
   
   private
   def post_params
