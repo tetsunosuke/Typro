@@ -68,5 +68,5 @@ gem 'font-awesome-sass'
 gem 'rename'
 
 group :production do
-  gem 'unicorn'
+  gem 'unicorn', '5.4.1'
 end
