@@ -1,7 +1,7 @@
-@import 'variable';
-@import "reset 2";
-@import "posts/index.scss";
-@import "posts/new.scss";
-@import "users.scss";
+@import 'modules/variable';
+@import "modules/reset 2";
+@import "modules/index.scss";
+@import "modules/new.scss";
+@import "modules/users.scss";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
