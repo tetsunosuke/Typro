@@ -1,56 +1,12 @@
 function TypeStart() {
   
   const words = [
-    "indexOf",
-    "lastindexOf",
-    "charAt",
-    "match",
-    "replace",
-    "search",
-    "substring",
-    "substr",
-    "sprit",
-    "toUpperCase",
-    "toLowerCase",
-    "search",
-    "link",
-    "concat",
-    "trim",
-    "push",
-    "pop",
-    "unshift",
-    "slice",
-    "sort",
-    "reverse",
-    "concat",
-    "join",
-    "splice",
-    "Mathrandom",
-    "ceil",
-    "floor",
-    "round",
-    "max",
-    "min",
-    "abs",
-    "pow",
-    "sqrt",
-    "sin",
-    "cos",
-    "tan",
-    "getFullYea",
-    "getMonth",
-    "getDate",
-    "getDay",
-    "getHoures",
-    "getMinutes",
-    "getSeconds",
-    "getMilliseconds",
-    "toDateString",
-    "toTimeString",
-    "toLocaleDateString",
-    "toLocaleTimeString",
-    "toString",
-   
+    "indexOf","lastindexOf","charAt","match","replace","search","substring","substr","sprit",
+    "toUpperCase","toLowerCase","search","link","concat","trim","push","pop","unshift","slice",
+    "sort","reverse","concat","join","splice","Mathrandom","ceil","floor","round","max","min",
+    "abs","pow","sqrt","sin","cos","tan","getFullYear","getMonth","getDate","getDay","getHoures",
+    "getMinutes","getSeconds","getMilliseconds","toDateString","toTimeString","toLocaleDateString",
+    "toLocaleTimeString","toString",
   ];
   let word;
   let loc;
@@ -99,8 +55,6 @@ function TypeStart() {
       const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
       const point = score - miss;
       result.textContent = (`今回のスコアは${point}点、正解率は${accuracy.toFixed(1)}% でした！`);
-      const form = document.getElementById
-      
       ('score-form').value = point;
     }
     
