@@ -1,13 +1,13 @@
 function TypeStart() {
   
   const words = [
-    "indexOf","lastindexOf","charAt","match","replace","search","substring(start, end)","substr(start,length)","sprit(separator)",
+    "indexOf","lastindexOf","charAt","match","replace","substring(start, end)","substr(start,length)","sprit(separator)",
     "toUpperCase","toLowerCase","link","concat","trim","push","pop","unshift","slice",
     "sort","reverse","concat","join","splice","Mathrandom","ceil","floor","round","max","min",
     
   ];
   const meanings = [
-    "前方からstrを検索する。見つからない場合は-1を返す。","後方からstrを検索する。見つからない場合は-1を返す","index番目の文字を返す","パターン検索","パターン検索して、strに置換","search","start文字目からend文字目までを取得","start文字目からlength文字を取得","文字列をseparatorで区切って配列に分割",
+    "前方からstrを検索する。見つからない場合は-1を返す。","後方からstrを検索する。見つからない場合は-1を返す","index番目の文字を返す","パターン検索","パターン検索して、strに置換","start文字目からend文字目までを取得","start文字目からlength文字を取得","文字列をseparatorで区切って配列に分割",
     "大文字に変換","小文字に変換","リクエストするハイパーテキストリンクを作成","結合する","文字列の両端から空白を取り除く","	配列の最後に要素を追加","配列の最後の要素を取り出す","配列の先頭に要素を追加","指定範囲の要素を取り出す",
     "ソート","	並び順を逆にする","連結","配列の要素を指定区切り文字で連結","要素を置換","	乱数取得 （0以上1未満）","切り上げ","切捨て","四捨五入","最大値","最小値"
   ];
