@@ -62,6 +62,7 @@ function TypeStart() {
       const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
       const point = score - miss;
       result.textContent = (`今回のスコアは${point}点、正解率は${accuracy.toFixed(1)}% でした！`);
+      const form = document.getElementById
       ('score-form').value = point;
     }
     
