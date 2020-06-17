@@ -1,13 +1,18 @@
 function TypeStart() {
   
   const words = [
-    "indexOf","lastindexOf","charAt","match","replace","search","substring","substr","sprit",
-    "toUpperCase","toLowerCase","search","link","concat","trim","push","pop","unshift","slice",
+    "indexOf","lastindexOf","charAt","match","replace","search","substring(start, end)","substr(start,length)","sprit(separator)",
+    "toUpperCase","toLowerCase","link","concat","trim","push","pop","unshift","slice",
     "sort","reverse","concat","join","splice","Mathrandom","ceil","floor","round","max","min",
-    "abs","pow","sqrt","sin","cos","tan","getFullYear","getMonth","getDate","getDay","getHoures",
-    "getMinutes","getSeconds","getMilliseconds","toDateString","toTimeString","toLocaleDateString",
-    "toLocaleTimeString","toString",
+    
   ];
+  const meanings = [
+    "前方からstrを検索する。見つからない場合は-1を返す。","後方からstrを検索する。見つからない場合は-1を返す","index番目の文字を返す","パターン検索","パターン検索して、strに置換","search","start文字目からend文字目までを取得","start文字目からlength文字を取得","文字列をseparatorで区切って配列に分割",
+    "大文字に変換","小文字に変換","リクエストするハイパーテキストリンクを作成","結合する","文字列の両端から空白を取り除く","	配列の最後に要素を追加","配列の最後の要素を取り出す","配列の先頭に要素を追加","指定範囲の要素を取り出す",
+    "ソート","	並び順を逆にする","連結","配列の要素を指定区切り文字で連結","要素を置換","	乱数取得 （0以上1未満）","切り上げ","切捨て","四捨五入","最大値","最小値"
+  ];
+
+  let m;
   let word;
   let loc;
   let score;
@@ -22,33 +27,35 @@ function TypeStart() {
   const timerLabel = document.getElementById("timer");
   const btn = document.getElementById('startbtn');
   const result = document.getElementById('result');
+  const meaning = document.getElementById('meaning');
   
   
   function updateTarget(){
     let placeholder = "";
     for (let i = 0; i<loc;i++){
       placeholder +="_";
-      }
-      target.textContent = placeholder + word.substring(loc);
-      
-      
     }
-    function updateTimer(){
-      const timeLeft = startTime + timeLimit - Date.now();
-      timerLabel.textContent = (timeLeft /1000).toFixed(2);
+    target.textContent = placeholder + word.substring(loc);
+    meaning.textContent = m;
+    
+  }
+  function updateTimer(){
+    const timeLeft = startTime + timeLimit - Date.now();
+    timerLabel.textContent = (timeLeft /1000).toFixed(2);
+    
+    const timeoutId = setTimeout(() =>{
+      updateTimer();
+    },10);
+    if(timeLeft < 0){
+      isPlaying = false;
       
-      const timeoutId = setTimeout(() =>{
-        updateTimer();
-      },10);
-      if(timeLeft < 0){
-        isPlaying = false;
-        
-        clearTimeout(timeoutId);
-        timerLabel.textContent = "0.00";
+      clearTimeout(timeoutId);
+      timerLabel.textContent = "0.00";
         setTimeout(() => {
           showResult();
         }, 100);
         target.textContent = "click to replay";
+        meaning.textContent = "";
       }
     }
     function showResult(){
@@ -69,9 +76,12 @@ function TypeStart() {
       miss = 0;
       scoreLabel.textContent = score;
       missLabel.textContent = miss;
-      word = words[Math.floor(Math.random()*words.length)];
+      let num = Math.floor(Math.random() * words.length);
+      word = words[num];
+      m = meanings[num]
       
       target.textContent = word;
+      meaning.textContent = m;
       startTime = Date.now();
       updateTimer();
       
@@ -82,10 +92,11 @@ function TypeStart() {
       }
       if(e.key === word[loc]){
         loc++;
-        if(loc ===word.length){
-          word = words[Math.floor(Math.random()*words.length)];
-          loc = 0;
-          
+        if (loc === word.length) {
+          let num2 = Math.floor(Math.random()*words.length)
+          word = words[num2];
+          m = meanings[num2];
+          loc = 0; 
         }
         updateTarget();
         score++;
@@ -96,4 +107,6 @@ function TypeStart() {
       }
     });
 }
+
+
 window.onload = TypeStart
